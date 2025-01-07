@@ -68,10 +68,12 @@ app.get('/', (req, res) => {
     </head>
     <body>    
         <h1>Todos los Usuarios</h1>
+        <nav>
         <a href="/marketing">Marketing</a>
         <a href="/ventas">Ventas</a>
         <a href="/qas">QAs</a>
         <a href="/developers">Developers</a>
+        </nav>
     <body>
     </html>
     `
@@ -80,7 +82,7 @@ app.get('/', (req, res) => {
 
 app.get("/marketing", (req, res) => {
     const usuariosMaketing = marketingFiltrado();
-    const marketUs = usuariosMaketing.map((usuario) => `<li>ID: ${usuario.id}, Nombre: ${usuario.name}, Usuario: ${usuario.age}</li>`).join("");
+    const marketUs = usuariosMaketing.map((usuario) => `<li>Número Id: ${usuario.id}, Nombre: ${usuario.name}, Edad: ${usuario.age}</li>`).join("");
 
     res.send(`
         <!DOCTYPE html>
@@ -93,12 +95,14 @@ app.get("/marketing", (req, res) => {
     </head>
     <body>
         <h1>Especializados en Marketing</h1>
+        <nav>
         <a href="/marketing">Marketing</a>
         <a href="/ventas">Ventas</a>
         <a href="/qas">QAs</a>
         <a href="/developers">Developers</a>
+        </nav>
         <ul>${marketUs}</ul>
-        <a href="/">Inicio</a>
+        <footer><a class="inicio" href="/">Inicio</a></footer>
     </body>
     </html>    
         `)
@@ -106,7 +110,7 @@ app.get("/marketing", (req, res) => {
 
 app.get("/ventas", (req, res) => {
     const usuariosVentas = ventasFiltrado();
-    const ventasUs = usuariosVentas.map((usuario) => `<li>ID: ${usuario.id}, Nombre: ${usuario.name}, Usuario: ${usuario.age}</li>`).join("");
+    const ventasUs = usuariosVentas.map((usuario) => `<li>Número Id: ${usuario.id}, Nombre: ${usuario.name}, Edad: ${usuario.age}</li>`).join("");
 
     res.send(`
     <!DOCTYPE html>
@@ -120,12 +124,14 @@ app.get("/ventas", (req, res) => {
 
     <body>
         <h1>Especializados en Ventas</h1>
+        <nav>
         <a href="/marketing">Marketing</a>
         <a href="/ventas">Ventas</a>
         <a href="/qas">QAs</a>
         <a href="/developers">Developers</a>
+        </nav>
         <ul>${ventasUs}</ul>
-        <a href="/">Inicio</a>
+        <footer><a class="inicio" href="/">Inicio</a></footer>
     </body>
     </html> 
         `)
@@ -133,7 +139,7 @@ app.get("/ventas", (req, res) => {
 
 app.get("/qas", (req, res) => {
     const usuariosQas = qasFiltrado();
-    const qasUs = usuariosQas.map((usuario) => `<li>ID: ${usuario.id}, Nombre: ${usuario.name}, Usuario: ${usuario.age}</li>`).join("");
+    const qasUs = usuariosQas.map((usuario) => `<li>Número Id: ${usuario.id}, Nombre: ${usuario.name}, Edad: ${usuario.age}</li>`).join("");
 
     res.send(`
         <!DOCTYPE html>
@@ -147,12 +153,14 @@ app.get("/qas", (req, res) => {
 
     <body> 
         <h1>Especializados en QAs</h1>
+        <nav>
         <a href="/marketing">Marketing</a>
         <a href="/ventas">Ventas</a>
         <a href="/qas">QAs</a>
         <a href="/developers">Developers</a>
+        </nav>
         <ul>${qasUs}</ul>
-        <a href="/">Inicio</a>
+        <footer><a class="inicio" href="/">Inicio</a></footer>
     </body>
     </html>    
         `)
@@ -160,7 +168,7 @@ app.get("/qas", (req, res) => {
 
 app.get("/developers", (req, res) => {
     const usuariosDevelopers = developersFiltrado();
-    const devUs = usuariosDevelopers.map((usuario) => `<li>ID: ${usuario.id}, Nombre: ${usuario.name}, Usuario: ${usuario.age}</li>`).join("");
+    const devUs = usuariosDevelopers.map((usuario) => `<li>Número Id: ${usuario.id}, Nombre: ${usuario.name}, Edad: ${usuario.age}</li>`).join("");
 
     res.send(`
         <!DOCTYPE html>
@@ -174,12 +182,14 @@ app.get("/developers", (req, res) => {
 
     <body> 
         <h1>Especializados en Developing</h1>
+        <nav>
         <a href="/marketing">Marketing</a>
         <a href="/ventas">Ventas</a>
         <a href="/qas">QAs</a>
         <a href="/developers">Developers</a>
+        </nav>
         <ul>${devUs}</ul>
-        <a href="/">Inicio</a>
+        <footer><a class="inicio" href="/">Inicio</a></footer>
     </body>
     </html>     
         `)
